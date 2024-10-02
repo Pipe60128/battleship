@@ -2,6 +2,7 @@ import os
 import copy
 import time
 import random
+from colorama import init, Fore, Back, Style
 
 # 0 -> NO hay barco
 # 1 -> SI hay barco
@@ -38,7 +39,7 @@ def coord_a_pos (coords: str):
     letra, numero = [coord for coord in coords]
     numero = int(numero) - 1
     if not(letra in LETRAS_A_NUMEROS):
-        print("Coordenada Inválida:")
+        print(Fore.RED+"Coordenada Inválida:"+Style.RESET_ALL)
         return VACIO
     if numero > 4:
         print("Coordenada Inválida:")
